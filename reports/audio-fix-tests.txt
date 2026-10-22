@@ -1,0 +1,17 @@
+test_automatic_output_rate_and_unrelated_errors (test_core.CoreTests.test_automatic_output_rate_and_unrelated_errors) ... ok
+test_automatic_sample_rate_exhausted (test_core.CoreTests.test_automatic_sample_rate_exhausted) ... ok
+test_automatic_sample_rate_falls_back (test_core.CoreTests.test_automatic_sample_rate_falls_back) ... ok
+test_capture_is_bounded (test_core.CoreTests.test_capture_is_bounded) ... ok
+test_device_selection (test_core.CoreTests.test_device_selection) ... ok
+test_explicit_sample_rate_error_is_actionable (test_core.CoreTests.test_explicit_sample_rate_error_is_actionable) ... ok
+test_hf_download_integrity_cache_and_update (test_core.CoreTests.test_hf_download_integrity_cache_and_update) ... ok
+test_playback_partial_blocks_underflow_and_clipping (test_core.CoreTests.test_playback_partial_blocks_underflow_and_clipping) ... ok
+test_reference_validation_and_resampling (test_core.CoreTests.test_reference_validation_and_resampling) ... ok
+test_settings_and_corruption (test_core.CoreTests.test_settings_and_corruption) ... ok
+test_strict_model_compatibility (test_core.CoreTests.test_strict_model_compatibility) ... ok
+test_unsupported_audio_rate_does_not_load_model (test_gui.GuiTests.test_unsupported_audio_rate_does_not_load_model) ... ok
+
+----------------------------------------------------------------------
+Ran 12 tests in 0.971s
+
+OK

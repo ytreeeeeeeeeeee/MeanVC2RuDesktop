@@ -1,0 +1,56 @@
+{
+  "platform": "Windows-10-10.0.26200-SP0",
+  "torch": "2.5.1+cpu",
+  "device": "cpu",
+  "gpus": [],
+  "profile": "120ms",
+  "model": "meanvc2_ru.safetensors",
+  "initialization_s": 8.958000399987213,
+  "streaming_passes": [
+    {
+      "blocks": 63,
+      "input_seconds": 10.08,
+      "output_seconds": 9.82,
+      "mean_ms": 38.284001587372686,
+      "p95_ms": 76.14400998572816,
+      "max_ms": 100.69920000387356,
+      "rtf": 0.23927500992107928,
+      "peak": 0.7418401837348938
+    },
+    {
+      "blocks": 63,
+      "input_seconds": 10.08,
+      "output_seconds": 9.82,
+      "mean_ms": 34.726376190692896,
+      "p95_ms": 49.0968799975235,
+      "max_ms": 50.219800032209605,
+      "rtf": 0.21703985119183059,
+      "peak": 0.7612795829772949
+    }
+  ],
+  "audio_latency": "Not measured: use --audio-test for an estimate; physical loopback is required for end-to-end measurement",
+  "audio_runs": [
+    {
+      "level": 1.5032203918963205e-05,
+      "peak_level": 1.5413705114042386e-05,
+      "processing_ms": 52.61569999856874,
+      "latency_ms": 591.3090852392857,
+      "input_overflows": 0,
+      "output_underflows": 3,
+      "blocks": 62,
+      "input_latency_ms": 20.0,
+      "output_latency_ms": 91.42857142857143
+    },
+    {
+      "level": 1.5032203918963205e-05,
+      "peak_level": 1.5413705114042386e-05,
+      "processing_ms": 52.25910001900047,
+      "latency_ms": 584.5352730051881,
+      "input_overflows": 0,
+      "output_underflows": 4,
+      "blocks": 62,
+      "input_latency_ms": 20.0,
+      "output_latency_ms": 91.42857142857143
+    }
+  ]
+}

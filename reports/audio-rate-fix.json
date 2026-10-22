@@ -1,0 +1,21 @@
+[
+  {
+    "device": "Windows WASAPI | Microphone (HyperX Cloud Flight Wireless)",
+    "requested_rate": 96000,
+    "error": "Устройство входа «Microphone (HyperX Cloud Flight Wireless)» не поддерживает частоту 96000 Гц. Выберите «Автоматически (частота устройства)» в разделе «Аудио» или другую частоту. Можно также выбрать это устройство через другой аудиодрайвер."
+  },
+  {
+    "device": "Windows WASAPI | Microphone (HyperX Cloud Flight Wireless)",
+    "requested_rate": 0,
+    "actual_rate": 48000,
+    "channels": 1,
+    "opened": true
+  },
+  {
+    "device": "Windows WASAPI | Microphone (HyperX Cloud Flight Wireless)",
+    "requested_rate": 48000,
+    "actual_rate": 48000,
+    "channels": 1,
+    "opened": true
+  }
+]

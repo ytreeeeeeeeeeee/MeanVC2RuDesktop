@@ -1,0 +1,37 @@
+{
+  "platform": "Windows-10-10.0.26200-SP0",
+  "torch": "2.5.1+cu121",
+  "device": "cpu",
+  "gpus": [
+    [
+      0,
+      "NVIDIA GeForce RTX 4060 Ti"
+    ]
+  ],
+  "profile": "120ms",
+  "model": "meanvc2_ru.safetensors",
+  "initialization_s": 9.147033599962015,
+  "streaming_passes": [
+    {
+      "blocks": 407,
+      "input_seconds": 65.12,
+      "output_seconds": 64.9,
+      "mean_ms": 36.4243233402223,
+      "p95_ms": 50.6981699669268,
+      "max_ms": 115.7674000132829,
+      "rtf": 0.2276520208763894,
+      "peak": 1.0971119403839111
+    },
+    {
+      "blocks": 407,
+      "input_seconds": 65.12,
+      "output_seconds": 64.9,
+      "mean_ms": 36.6499769029148,
+      "p95_ms": 53.70971998781897,
+      "max_ms": 78.29380000475794,
+      "rtf": 0.2290623556432175,
+      "peak": 0.873191237449646
+    }
+  ],
+  "audio_latency": "Not measured: use --audio-test for an estimate; physical loopback is required for end-to-end measurement"
+}

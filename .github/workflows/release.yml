@@ -1,0 +1,110 @@
+name: Build and publish Windows release
+
+on:
+  workflow_dispatch:
+    inputs:
+      tag:
+        description: 'Новый тег релиза, например v1.0.1'
+        required: true
+        type: string
+
+permissions:
+  contents: write
+
+concurrency:
+  group: release-${{ inputs.tag }}
+  cancel-in-progress: false
+
+jobs:
+  release:
+    runs-on: windows-2022
+    timeout-minutes: 90
+    defaults:
+      run:
+        shell: pwsh
+    env:
+      RELEASE_TAG: ${{ inputs.tag }}
+      PIP_NO_CACHE_DIR: '1'
+      QT_QPA_PLATFORM: offscreen
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6
+        with:
+          fetch-depth: 0
+          submodules: recursive
+          persist-credentials: false
+
+      - name: Validate new release tag
+        run: |
+          if ($env:RELEASE_TAG -cnotmatch '^v[0-9]+\.[0-9]+\.[0-9]+$') {
+            throw 'Use a new version tag such as v1.0.1'
+          }
+          git show-ref --verify --quiet "refs/tags/$env:RELEASE_TAG"
+          if ($LASTEXITCODE -eq 0) { throw 'Tag already exists; choose a new version' }
+          if ($LASTEXITCODE -ne 1) { throw 'Cannot check release tag' }
+          $global:LASTEXITCODE = 0
+
+      - name: Set up Python 3.11 x64
+        uses: actions/setup-python@ece7cb06caefa5fff74198d8649806c4678c61a1 # v6
+        with:
+          python-version: '3.11'
+          architecture: x64
+
+      - name: Build single EXE with CPU and CUDA
+        run: |
+          python -m venv .venv
+          if ($LASTEXITCODE -ne 0) { throw 'Cannot create Python environment' }
+          ./scripts/build.ps1 -Variant cuda -OneFile
+
+      - name: Verify CPU fallback and GUI
+        run: |
+          $env:QT_QPA_FONTDIR = Join-Path $env:SystemRoot 'Fonts'
+          $bundle = Join-Path $env:GITHUB_WORKSPACE 'dist/cuda-onefile'
+          $diagnostics = Get-Content -Raw -LiteralPath (Join-Path $bundle 'build-diagnostics.json') | ConvertFrom-Json
+          if (-not $diagnostics.frozen -or $diagnostics.cuda_runtime -ne '12.1') {
+            throw 'Expected a frozen application with the CUDA-enabled PyTorch runtime'
+          }
+          if (@($diagnostics.gpus).Count -ne 0) {
+            throw 'CPU fallback check expects a runner without a CUDA GPU'
+          }
+          $env:LOCALAPPDATA = Join-Path $env:RUNNER_TEMP 'meanvc2-smoke'
+          $imagePath = Join-Path $bundle 'build-smoke.png'
+          $process = Start-Process -FilePath (Join-Path $bundle 'MeanVC2Desktop.exe') -ArgumentList @('--smoke-test', ('"' + $imagePath + '"')) -PassThru -WindowStyle Hidden
+          if (-not $process.WaitForExit(300000)) {
+            Stop-Process -Id $process.Id
+            throw 'GUI smoke test timed out'
+          }
+          if ($process.ExitCode -ne 0 -or -not (Test-Path -LiteralPath $imagePath)) {
+            throw 'GUI smoke test failed'
+          }
+
+      - name: Verify release EXE
+        run: |
+          $exe = Get-Item -LiteralPath 'dist/cuda-onefile/MeanVC2Desktop.exe' -ErrorAction Stop
+          if ($exe.PSIsContainer -or $exe.Length -le 0 -or $exe.Length -ge 2GB) {
+            throw 'Expected a nonempty EXE smaller than 2 GiB'
+          }
+          Write-Output "Release asset: $($exe.Name), $($exe.Length) bytes"
+
+      - name: Publish release
+        env:
+          GH_TOKEN: ${{ github.token }}
+          GH_REPO: ${{ github.repository }}
+        run: |
+          $notesPath = Join-Path $env:RUNNER_TEMP 'release-notes.md'
+          @"
+          Windows 10/11 x64. One EXE with CPU and NVIDIA CUDA support.
+          Download and run MeanVC2Desktop.exe. Python and CUDA Toolkit are not required.
+          A compatible NVIDIA driver is required for CUDA; Auto uses CPU when CUDA is unavailable.
+          Download models with the app's "Скачать / обновить" button; they are stored in %LOCALAPPDATA%\MeanVC2Desktop.
+          The single-file EXE extracts its libraries to a temporary folder at startup.
+
+          Validation: automated tests, frozen runtime diagnostics and GUI startup on a CPU-only runner.
+          CUDA inference and physical audio devices require hardware validation outside this workflow.
+          Source commit: $env:GITHUB_SHA
+          "@ | Set-Content -LiteralPath $notesPath -Encoding utf8
+          gh release create $env:RELEASE_TAG 'dist/cuda-onefile/MeanVC2Desktop.exe' --draft --target $env:GITHUB_SHA --title "MeanVC2 Desktop $env:RELEASE_TAG" --notes-file $notesPath
+          if ($LASTEXITCODE -ne 0) { throw 'Release creation or EXE upload failed; any incomplete release remains a draft' }
+          gh release edit $env:RELEASE_TAG --draft=false --latest
+          if ($LASTEXITCODE -ne 0) { throw 'Could not publish the draft release' }

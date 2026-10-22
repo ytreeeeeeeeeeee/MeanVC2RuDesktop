@@ -1,0 +1,37 @@
+{
+  "platform": "Windows-10-10.0.26200-SP0",
+  "torch": "2.5.1+cu121",
+  "device": "cpu",
+  "gpus": [
+    [
+      0,
+      "NVIDIA GeForce RTX 4060 Ti"
+    ]
+  ],
+  "profile": "120ms",
+  "model": "C:\\Users\\kvask\\Documents\\hlam\\meanvc2\\common\\app_builder\\.downloads\\local-model.safetensors",
+  "initialization_s": 10.562670500017703,
+  "streaming_passes": [
+    {
+      "blocks": 32,
+      "input_seconds": 5.12,
+      "output_seconds": 4.9,
+      "mean_ms": 57.99192187805602,
+      "p95_ms": 118.7792550132144,
+      "max_ms": 162.93039999436587,
+      "rtf": 0.3624495117378501,
+      "peak": 0.6730295419692993
+    },
+    {
+      "blocks": 32,
+      "input_seconds": 5.12,
+      "output_seconds": 4.9,
+      "mean_ms": 45.315121873500175,
+      "p95_ms": 69.81681999168359,
+      "max_ms": 74.57980001345277,
+      "rtf": 0.2832195117093761,
+      "peak": 0.8066297173500061
+    }
+  ],
+  "audio_latency": "Not measured: use --audio-test for an estimate; physical loopback is required for end-to-end measurement"
+}

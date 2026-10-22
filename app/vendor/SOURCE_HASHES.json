@@ -1,0 +1,7 @@
+{
+  "s3prl/upstream/interfaces.py": "dcc952282cf1d3c2b63bc4262e8574ffd466301b6cacf8a98c50846e6a994a37",
+  "s3prl/upstream/wavlm/WavLM.py": "9524dd7f0a13fe360fd8bc1ef5b2d34af9926addd453d42971726d23fdba9500",
+  "s3prl/upstream/wavlm/modules.py": "d60166df8d6039b275310fca3941e11f011d91cb4985d3a3fd86e7c62b0b4983",
+  "s3prl/upstream/wavlm/expert.py": "80a7aaac137788662c5d05dddb0c81edf4d748539857a181de8eceffbdf8566b",
+  "s3prl/utility/helper.py": "bec1544ab95891c6f305526b25e124bb6154da694a333c06f0c34b2ba4b0f1fb"
+}

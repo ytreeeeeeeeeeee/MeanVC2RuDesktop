@@ -1,0 +1,44 @@
+{
+  "scenarios": [
+    {
+      "mode": "cpu",
+      "input": "Windows WASAPI | Microphone (HyperX Cloud Flight Wireless)",
+      "output": "Windows WASAPI | CABLE Input (VB-Audio Virtual Cable)",
+      "stats": {
+        "level": 0.0,
+        "peak_level": 0,
+        "processing_ms": 59.66010002885014,
+        "latency_ms": 559.313801641576,
+        "input_overflows": 0,
+        "output_underflows": 1,
+        "blocks": 65,
+        "input_latency_ms": 40.0,
+        "output_latency_ms": 22.0
+      }
+    },
+    {
+      "mode": "cuda",
+      "input": "Windows WASAPI | CABLE Output (VB-Audio Virtual Cable)",
+      "output": "Windows WASAPI | Динамики (HyperX Cloud Flight Wireless)",
+      "stats": {
+        "level": 0.009931608103215694,
+        "peak_level": 0.13356071710586548,
+        "processing_ms": 66.78729999111965,
+        "latency_ms": 682.8443016256206,
+        "input_overflows": 0,
+        "output_underflows": 0,
+        "blocks": 65,
+        "input_latency_ms": 40.0,
+        "output_latency_ms": 22.0
+      }
+    }
+  ],
+  "gui_recording_virtual_input": "passed",
+  "recording": {
+    "status": "rejected_sample",
+    "reason": "Образец содержит тишину или некорректные значения"
+  },
+  "virtual_cable_pcm": "passed",
+  "listen_voice": "passed",
+  "settings_restart": "passed"
+}

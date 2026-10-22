@@ -1,0 +1,304 @@
+{
+  "platform": "Windows-10-10.0.26200-SP0",
+  "python": "3.11.9 (tags/v3.11.9:de54cf5, Apr  2 2024, 10:12:12) [MSC v.1938 64 bit (AMD64)]",
+  "frozen": false,
+  "executable": "C:\\Users\\kvask\\Documents\\hlam\\meanvc2\\common\\app_builder\\.venv\\Scripts\\python.exe",
+  "torch": "2.5.1+cu121",
+  "cuda_runtime": "12.1",
+  "gpus": [
+    [
+      0,
+      "NVIDIA GeForce RTX 4060 Ti"
+    ]
+  ],
+  "audio_devices": [
+    {
+      "index": 0,
+      "name": "Переназначение звуковых устр. - Input",
+      "host": "MME",
+      "key": "MME | Переназначение звуковых устр. - Input",
+      "inputs": 2,
+      "outputs": 0
+    },
+    {
+      "index": 1,
+      "name": "Microphone (HyperX Cloud Flight",
+      "host": "MME",
+      "key": "MME | Microphone (HyperX Cloud Flight",
+      "inputs": 1,
+      "outputs": 0
+    },
+    {
+      "index": 2,
+      "name": "CABLE Output (VB-Audio Virtual ",
+      "host": "MME",
+      "key": "MME | CABLE Output (VB-Audio Virtual ",
+      "inputs": 16,
+      "outputs": 0
+    },
+    {
+      "index": 3,
+      "name": "Переназначение звуковых устр. - Output",
+      "host": "MME",
+      "key": "MME | Переназначение звуковых устр. - Output",
+      "inputs": 0,
+      "outputs": 2
+    },
+    {
+      "index": 4,
+      "name": "Динамики (HyperX Cloud Flight W",
+      "host": "MME",
+      "key": "MME | Динамики (HyperX Cloud Flight W",
+      "inputs": 0,
+      "outputs": 2
+    },
+    {
+      "index": 5,
+      "name": "CABLE In 16ch (VB-Audio Virtual",
+      "host": "MME",
+      "key": "MME | CABLE In 16ch (VB-Audio Virtual",
+      "inputs": 0,
+      "outputs": 16
+    },
+    {
+      "index": 6,
+      "name": "ZG24Q180 (NVIDIA High Definitio",
+      "host": "MME",
+      "key": "MME | ZG24Q180 (NVIDIA High Definitio",
+      "inputs": 0,
+      "outputs": 2
+    },
+    {
+      "index": 7,
+      "name": "VA2261 Series (NVIDIA High Defi",
+      "host": "MME",
+      "key": "MME | VA2261 Series (NVIDIA High Defi",
+      "inputs": 0,
+      "outputs": 2
+    },
+    {
+      "index": 8,
+      "name": "Digital Audio (S/PDIF) (High De",
+      "host": "MME",
+      "key": "MME | Digital Audio (S/PDIF) (High De",
+      "inputs": 0,
+      "outputs": 2
+    },
+    {
+      "index": 9,
+      "name": "CABLE Input (VB-Audio Virtual C",
+      "host": "MME",
+      "key": "MME | CABLE Input (VB-Audio Virtual C",
+      "inputs": 0,
+      "outputs": 16
+    },
+    {
+      "index": 10,
+      "name": "Первичный драйвер записи звука",
+      "host": "Windows DirectSound",
+      "key": "Windows DirectSound | Первичный драйвер записи звука",
+      "inputs": 2,
+      "outputs": 0
+    },
+    {
+      "index": 11,
+      "name": "Microphone (HyperX Cloud Flight Wireless)",
+      "host": "Windows DirectSound",
+      "key": "Windows DirectSound | Microphone (HyperX Cloud Flight Wireless)",
+      "inputs": 1,
+      "outputs": 0
+    },
+    {
+      "index": 12,
+      "name": "CABLE Output (VB-Audio Virtual Cable)",
+      "host": "Windows DirectSound",
+      "key": "Windows DirectSound | CABLE Output (VB-Audio Virtual Cable)",
+      "inputs": 16,
+      "outputs": 0
+    },
+    {
+      "index": 13,
+      "name": "Первичный звуковой драйвер",
+      "host": "Windows DirectSound",
+      "key": "Windows DirectSound | Первичный звуковой драйвер",
+      "inputs": 0,
+      "outputs": 2
+    },
+    {
+      "index": 14,
+      "name": "Динамики (HyperX Cloud Flight Wireless)",
+      "host": "Windows DirectSound",
+      "key": "Windows DirectSound | Динамики (HyperX Cloud Flight Wireless)",
+      "inputs": 0,
+      "outputs": 2
+    },
+    {
+      "index": 15,
+      "name": "CABLE In 16ch (VB-Audio Virtual Cable)",
+      "host": "Windows DirectSound",
+      "key": "Windows DirectSound | CABLE In 16ch (VB-Audio Virtual Cable)",
+      "inputs": 0,
+      "outputs": 16
+    },
+    {
+      "index": 16,
+      "name": "ZG24Q180 (NVIDIA High Definition Audio)",
+      "host": "Windows DirectSound",
+      "key": "Windows DirectSound | ZG24Q180 (NVIDIA High Definition Audio)",
+      "inputs": 0,
+      "outputs": 2
+    },
+    {
+      "index": 17,
+      "name": "VA2261 Series (NVIDIA High Definition Audio)",
+      "host": "Windows DirectSound",
+      "key": "Windows DirectSound | VA2261 Series (NVIDIA High Definition Audio)",
+      "inputs": 0,
+      "outputs": 2
+    },
+    {
+      "index": 18,
+      "name": "Digital Audio (S/PDIF) (High Definition Audio Device)",
+      "host": "Windows DirectSound",
+      "key": "Windows DirectSound | Digital Audio (S/PDIF) (High Definition Audio Device)",
+      "inputs": 0,
+      "outputs": 2
+    },
+    {
+      "index": 19,
+      "name": "CABLE Input (VB-Audio Virtual Cable)",
+      "host": "Windows DirectSound",
+      "key": "Windows DirectSound | CABLE Input (VB-Audio Virtual Cable)",
+      "inputs": 0,
+      "outputs": 16
+    },
+    {
+      "index": 20,
+      "name": "CABLE In 16ch (VB-Audio Virtual Cable)",
+      "host": "Windows WASAPI",
+      "key": "Windows WASAPI | CABLE In 16ch (VB-Audio Virtual Cable)",
+      "inputs": 0,
+      "outputs": 2
+    },
+    {
+      "index": 21,
+      "name": "ZG24Q180 (NVIDIA High Definition Audio)",
+      "host": "Windows WASAPI",
+      "key": "Windows WASAPI | ZG24Q180 (NVIDIA High Definition Audio)",
+      "inputs": 0,
+      "outputs": 2
+    },
+    {
+      "index": 22,
+      "name": "VA2261 Series (NVIDIA High Definition Audio)",
+      "host": "Windows WASAPI",
+      "key": "Windows WASAPI | VA2261 Series (NVIDIA High Definition Audio)",
+      "inputs": 0,
+      "outputs": 2
+    },
+    {
+      "index": 23,
+      "name": "Digital Audio (S/PDIF) (High Definition Audio Device)",
+      "host": "Windows WASAPI",
+      "key": "Windows WASAPI | Digital Audio (S/PDIF) (High Definition Audio Device)",
+      "inputs": 0,
+      "outputs": 2
+    },
+    {
+      "index": 24,
+      "name": "Динамики (HyperX Cloud Flight Wireless)",
+      "host": "Windows WASAPI",
+      "key": "Windows WASAPI | Динамики (HyperX Cloud Flight Wireless)",
+      "inputs": 0,
+      "outputs": 2
+    },
+    {
+      "index": 25,
+      "name": "CABLE Input (VB-Audio Virtual Cable)",
+      "host": "Windows WASAPI",
+      "key": "Windows WASAPI | CABLE Input (VB-Audio Virtual Cable)",
+      "inputs": 0,
+      "outputs": 2
+    },
+    {
+      "index": 26,
+      "name": "CABLE Output (VB-Audio Virtual Cable)",
+      "host": "Windows WASAPI",
+      "key": "Windows WASAPI | CABLE Output (VB-Audio Virtual Cable)",
+      "inputs": 2,
+      "outputs": 0
+    },
+    {
+      "index": 27,
+      "name": "Microphone (HyperX Cloud Flight Wireless)",
+      "host": "Windows WASAPI",
+      "key": "Windows WASAPI | Microphone (HyperX Cloud Flight Wireless)",
+      "inputs": 2,
+      "outputs": 0
+    },
+    {
+      "index": 28,
+      "name": "CABLE Output (VB-Audio Point)",
+      "host": "Windows WDM-KS",
+      "key": "Windows WDM-KS | CABLE Output (VB-Audio Point)",
+      "inputs": 16,
+      "outputs": 0
+    },
+    {
+      "index": 29,
+      "name": "Output (VB-Audio Point)",
+      "host": "Windows WDM-KS",
+      "key": "Windows WDM-KS | Output (VB-Audio Point)",
+      "inputs": 0,
+      "outputs": 16
+    },
+    {
+      "index": 30,
+      "name": "Input (VB-Audio Point)",
+      "host": "Windows WDM-KS",
+      "key": "Windows WDM-KS | Input (VB-Audio Point)",
+      "inputs": 16,
+      "outputs": 0
+    },
+    {
+      "index": 31,
+      "name": "SPDIF Out (HD Audio SPDIF out)",
+      "host": "Windows WDM-KS",
+      "key": "Windows WDM-KS | SPDIF Out (HD Audio SPDIF out)",
+      "inputs": 0,
+      "outputs": 2
+    },
+    {
+      "index": 32,
+      "name": "Output (NVIDIA High Definition Audio)",
+      "host": "Windows WDM-KS",
+      "key": "Windows WDM-KS | Output (NVIDIA High Definition Audio)",
+      "inputs": 0,
+      "outputs": 2
+    },
+    {
+      "index": 33,
+      "name": "Output (NVIDIA High Definition Audio)",
+      "host": "Windows WDM-KS",
+      "key": "Windows WDM-KS | Output (NVIDIA High Definition Audio)",
+      "inputs": 0,
+      "outputs": 2
+    },
+    {
+      "index": 34,
+      "name": "Микрофон (HyperX Cloud Flight Wireless)",
+      "host": "Windows WDM-KS",
+      "key": "Windows WDM-KS | Микрофон (HyperX Cloud Flight Wireless)",
+      "inputs": 1,
+      "outputs": 0
+    },
+    {
+      "index": 35,
+      "name": "Динамики (HyperX Cloud Flight Wireless)",
+      "host": "Windows WDM-KS",
+      "key": "Windows WDM-KS | Динамики (HyperX Cloud Flight Wireless)",
+      "inputs": 0,
+      "outputs": 2
+    }
+  ]
+}

@@ -1,0 +1,7 @@
+{
+    "variant":  "cpu",
+    "model_not_loaded":  true,
+    "message":  "Устройство входа «Microphone (HyperX Cloud Flight Wireless)» не поддерживает частоту 96000 Гц. Выберите «Автоматически (частота устройства)» в разделе «Аудио» или другую частоту. Можно также выбрать это устройство через другой аудиодрайвер.",
+    "executable":  "C:\\Users\\kvask\\Documents\\hlam\\meanvc2\\common\\app_builder\\dist\\audio-fix\\cpu\\MeanVC2Desktop\\MeanVC2Desktop.exe",
+    "start_enabled":  true
+}

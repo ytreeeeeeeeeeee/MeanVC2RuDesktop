@@ -1,0 +1,22 @@
+{
+  "upstream_commit": "13acf84c1bf135ea5edad9c245b345289b06b33e",
+  "exe_bytes": 2036875123,
+  "zip_bytes": 2036875257,
+  "zip_sha256": "0f945231c1191c89e42b112c614109913bf33d525ac728efe9645f71dbad0d33",
+  "zip_members": [
+    "MeanVC2Desktop.exe"
+  ],
+  "upstream_modules": [
+    "run_rt",
+    "src",
+    "src.dit",
+    "src.dit_modules",
+    "src.modules",
+    "src.speaker"
+  ],
+  "upstream_data": [
+    "third_party\\MeanVC2\\src\\config\\config_120ms_40ms.json",
+    "third_party\\MeanVC2\\src\\config\\config_40ms_40ms.json"
+  ],
+  "legacy_meanvc2_copies": false
+}

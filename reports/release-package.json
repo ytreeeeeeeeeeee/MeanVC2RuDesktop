@@ -1,0 +1,13 @@
+{
+  "executable_bytes": 2036876291,
+  "zip_bytes": 2036876425,
+  "sha256": "e449eea7c15badd8b2fabcda468b6c24bd18a8e558a100388253042586b4d842",
+  "zip_members": [
+    "MeanVC2Desktop.exe"
+  ],
+  "has_cpu_and_cuda": true,
+  "precompiled_cudnn_engines": false,
+  "actionlint": "1.7.12: passed",
+  "powershell_syntax": "passed",
+  "unit_tests": 14
+}
